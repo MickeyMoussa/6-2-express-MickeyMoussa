@@ -10,10 +10,12 @@ import { getRandomQuote } from "./quotes.js";
 
 {/*write code to create server*/}
 
-const app = express();
-app.use(cors);
-const PORT = 3000;
+app.use(cors())
 
-app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
+app.get("/api/quote", (req, res) => {
+      res.json(getRandomQuote());
+    });
+
+app.get("/", (req, res) => {
+      res.send("Welcome to the Quote Generator API");
     });
