@@ -9,3 +9,11 @@ import { getRandomQuote } from "./quotes.js";
 
 
 {/*write code to create server*/}
+
+const app = express();
+app.use(cors);
+const PORT = 3000;
+
+app.listen(PORT, () => {
+      console.log(`Server running on http://localhost:${PORT}`);
+    });
